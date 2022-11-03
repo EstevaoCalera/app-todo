@@ -17,3 +17,4 @@ A aplicação pode ser acessada e utilizada através do [link](https://estevaoca
 - Ordenar tarefas com base nas categorias
 - Ordenar categorias com base em períodos de tempo
 - Criar subtarefas
+- Criar pop-up bonito de confirmação ao clicar em excluir todas as tarefas
