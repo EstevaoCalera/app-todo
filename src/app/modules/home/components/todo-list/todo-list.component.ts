@@ -1,4 +1,4 @@
-import { Component, DoCheck, Input, OnInit } from '@angular/core';
+import { Component, DoCheck, OnInit } from '@angular/core';
 import { TaskList } from '../../model/task-list';
 
 @Component({
@@ -10,7 +10,6 @@ export class TodoListComponent implements OnInit, DoCheck {
 
   public taskList: Array<TaskList> = []
 
-  constructor() { }
   ngOnInit(): void {
     this.taskList = JSON.parse(localStorage.getItem("list") || "[]")
   }
@@ -31,11 +30,15 @@ export class TodoListComponent implements OnInit, DoCheck {
 
   public deleteAllTaskList() {
     const confirm = window.confirm("Deseja apagar todas as tarefas?")
-    confirm ? this.taskList = [] : null
+    if (confirm) {
+      this.taskList = []
+    }
   }
 
   public validationInput(event: string, index: number) {
-    !event.trim() ? this.deleteItemTaskList(index) : null
+    if (!event.trim()) {
+      this.deleteItemTaskList(index)
+    }
   }
 
 }
